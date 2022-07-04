@@ -1,0 +1,20 @@
+<div >
+
+    <h1>Deleted Users</h1>
+    
+
+    <ul *ngFor="let user of users">
+        <li class="card w-50 card-body mb-2 mx-auto" *ngIf="user.isDeleted"
+            [style.border-color]="user.isDeleted?'red':'green'">
+            <h5 class="card-title">{{user.firstName}} {{user.lastName}}</h5>
+
+            <button (click)="bclick(user)" class="btn btn-success ml-auto">Activate</button>
+
+        </li>
+
+    </ul>
+
+</div>
+
+
+<div *ngIf="!users">No Users!!</div>
